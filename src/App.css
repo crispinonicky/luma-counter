@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+button {
+  padding: 20px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.reset {
+  margin-top: 50px;
+}
+
+.beeg {
+  font-size: 5em;
+}
