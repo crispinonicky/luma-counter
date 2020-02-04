@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "luma-calc.com/static/css/main.23048ab3.chunk.css",
+    "main.js": "luma-calc.com/static/js/main.bdebebf9.chunk.js",
+    "main.js.map": "luma-calc.com/static/js/main.bdebebf9.chunk.js.map",
+    "runtime-main.js": "luma-calc.com/static/js/runtime-main.7260eb63.js",
+    "runtime-main.js.map": "luma-calc.com/static/js/runtime-main.7260eb63.js.map",
+    "static/js/2.01b9d0a9.chunk.js": "luma-calc.com/static/js/2.01b9d0a9.chunk.js",
+    "static/js/2.01b9d0a9.chunk.js.map": "luma-calc.com/static/js/2.01b9d0a9.chunk.js.map",
+    "index.html": "luma-calc.com/index.html",
+    "precache-manifest.a27e934bc2ba86d6651227174ba5c458.js": "luma-calc.com/precache-manifest.a27e934bc2ba86d6651227174ba5c458.js",
+    "service-worker.js": "luma-calc.com/service-worker.js",
+    "static/css/main.23048ab3.chunk.css.map": "luma-calc.com/static/css/main.23048ab3.chunk.css.map",
+    "static/js/2.01b9d0a9.chunk.js.LICENSE.txt": "luma-calc.com/static/js/2.01b9d0a9.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "luma-calc.com/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7260eb63.js",
+    "static/js/2.01b9d0a9.chunk.js",
+    "static/css/main.23048ab3.chunk.css",
+    "static/js/main.bdebebf9.chunk.js"
+  ]
+}
