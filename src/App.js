@@ -5,7 +5,7 @@ import Probability from "./components/Probability";
 function App() {
   return (
     <div className="App">
-      <h1>Temtem Luma Calculator</h1>
+      <h1>Luma Counter</h1>
       <Probability />
     </div>
   );

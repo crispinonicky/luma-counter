@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Modal from './Modal';
 
 export default class Probability extends Component {
   state = {
@@ -6,7 +7,8 @@ export default class Probability extends Component {
     probability: "",
     lumaOdds: 0,
     until50: 4159,
-    until90: 13815
+    until90: 13815,
+    input: ""
   };
 
   reset = () => {
@@ -24,7 +26,7 @@ export default class Probability extends Component {
   addOne = () => {
     this.setState(
       {
-        counter: this.state.counter + 1,
+        counter: this.state.counter + parseInt(1),
         until50: this.state.until50 - 1,
         until90: this.state.until90 - 1
       },
@@ -99,10 +101,52 @@ export default class Probability extends Component {
     );
   };
 
+  info = () => {
+    console.log("heyyyy")
+  }
+
+  handleSubmit = (e) => {
+    console.log(this.state.input)
+
+    this.setState({
+      counter: parseInt(this.state.input)
+    }, ()=> {
+      this.setState(
+        {
+          lumaOdds: (1 - (5999 / 6000) ** this.state.counter) * 100,
+          until50: 4159 - this.state.input,
+          until90: 13815 - this.state.input,
+          input: ""
+        },
+        () => {
+          console.log("Odds of getting a luma are", this.state.lumaOdds);
+        }
+      );
+    })
+
+    e.preventDefault()
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      input: e.target.value
+    })
+  }
+
   render() {
     return (
       <div>
+
+        {/* <Modal/> */}
         {this.showCounter()}
+
+        <form onSubmit={this.handleSubmit}>
+        <label>
+          Manually set counter:
+          <input type="number" value={this.state.input} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
 
         <br />
         <div className = 'counter-buttons'>
@@ -121,6 +165,7 @@ export default class Probability extends Component {
         <button className="reset" onClick={this.reset}>
           Reset Counter
         </button>
+
       </div>
     );
   }

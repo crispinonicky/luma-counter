@@ -60,7 +60,13 @@ button {
 
 .beeg {
   font-size: 5em;
+  margin: 0 auto;
+  width: 200px;
 }
+
+/* .beeg:hover {
+  color: red;
+} */
 
 .counter-buttons {
   display: flex;
