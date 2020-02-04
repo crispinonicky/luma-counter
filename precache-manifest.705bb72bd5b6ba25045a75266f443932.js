@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "19b1cf37dbaba6ad4a995db37508e7fa",
+    "revision": "8db5d9e7b188c6f87736dcf88485f3ef",
     "url": "/luma-calc/index.html"
   },
   {
-    "revision": "7fe58ed777b093397734",
-    "url": "/luma-calc/static/css/main.23048ab3.chunk.css"
+    "revision": "db264f50b806727fa3dd",
+    "url": "/luma-calc/static/css/main.d24d66d5.chunk.css"
   },
   {
     "revision": "26ec9d63e05aa3b272ee",
@@ -16,15 +16,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/luma-calc/static/js/2.01b9d0a9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7fe58ed777b093397734",
-    "url": "/luma-calc/static/js/main.61f3f588.chunk.js"
+    "revision": "db264f50b806727fa3dd",
+    "url": "/luma-calc/static/js/main.682df00a.chunk.js"
   },
   {
     "revision": "188f50d944ed64d39d18",
     "url": "/luma-calc/static/js/runtime-main.5f6565fa.js"
-  },
-  {
-    "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
-    "url": "/luma-calc/static/media/logo.5d5d9eef.svg"
   }
 ]);

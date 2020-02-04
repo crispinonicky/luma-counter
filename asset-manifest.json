@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/luma-calc/static/css/main.23048ab3.chunk.css",
-    "main.js": "/luma-calc/static/js/main.61f3f588.chunk.js",
-    "main.js.map": "/luma-calc/static/js/main.61f3f588.chunk.js.map",
+    "main.css": "/luma-calc/static/css/main.d24d66d5.chunk.css",
+    "main.js": "/luma-calc/static/js/main.682df00a.chunk.js",
+    "main.js.map": "/luma-calc/static/js/main.682df00a.chunk.js.map",
     "runtime-main.js": "/luma-calc/static/js/runtime-main.5f6565fa.js",
     "runtime-main.js.map": "/luma-calc/static/js/runtime-main.5f6565fa.js.map",
     "static/js/2.01b9d0a9.chunk.js": "/luma-calc/static/js/2.01b9d0a9.chunk.js",
     "static/js/2.01b9d0a9.chunk.js.map": "/luma-calc/static/js/2.01b9d0a9.chunk.js.map",
     "index.html": "/luma-calc/index.html",
-    "precache-manifest.d3db23923fa367d733ad642de68f16a6.js": "/luma-calc/precache-manifest.d3db23923fa367d733ad642de68f16a6.js",
+    "precache-manifest.705bb72bd5b6ba25045a75266f443932.js": "/luma-calc/precache-manifest.705bb72bd5b6ba25045a75266f443932.js",
     "service-worker.js": "/luma-calc/service-worker.js",
-    "static/css/main.23048ab3.chunk.css.map": "/luma-calc/static/css/main.23048ab3.chunk.css.map",
-    "static/js/2.01b9d0a9.chunk.js.LICENSE.txt": "/luma-calc/static/js/2.01b9d0a9.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/luma-calc/static/media/logo.5d5d9eef.svg"
+    "static/css/main.d24d66d5.chunk.css.map": "/luma-calc/static/css/main.d24d66d5.chunk.css.map",
+    "static/js/2.01b9d0a9.chunk.js.LICENSE.txt": "/luma-calc/static/js/2.01b9d0a9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5f6565fa.js",
     "static/js/2.01b9d0a9.chunk.js",
-    "static/css/main.23048ab3.chunk.css",
-    "static/js/main.61f3f588.chunk.js"
+    "static/css/main.d24d66d5.chunk.css",
+    "static/js/main.682df00a.chunk.js"
   ]
 }
