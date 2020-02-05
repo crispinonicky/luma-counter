@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect, Link } from 'react-router-dom';
 import Modal from './Modal';
 
 export default class Probability extends Component {
@@ -88,7 +89,11 @@ export default class Probability extends Component {
   reset = () => {
     this.setState({
       counter: 0,
-      lumaOdds: 0
+      probability: "",
+      lumaOdds: 0,
+      until50: 4159,
+      until90: 13815,
+      input: ""
     });
   };
 
@@ -136,26 +141,29 @@ export default class Probability extends Component {
   render() {
     return (
       <div>
-
         {/* <Modal/> */}
         {this.showCounter()}
 
         <form onSubmit={this.handleSubmit}>
-        <label>
-          Manually set counter:
-          <input type="number" value={this.state.input} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+          <label>
+            Manually set counter:
+            <input
+              type="number"
+              value={this.state.input}
+              onChange={this.handleChange}
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
 
         <br />
-        <div className = 'counter-buttons'>
-        <button className="subtract" onClick={this.subtractOne}>
-          -
-        </button>
-        <button className="add" onClick={this.addOne}>
-          +
-        </button>
+        <div className="counter-buttons">
+          <button className="subtract" onClick={this.subtractOne}>
+            -
+          </button>
+          <button className="add" onClick={this.addOne}>
+            +
+          </button>
         </div>
 
         {this.showProbability()}
@@ -166,6 +174,8 @@ export default class Probability extends Component {
           Reset Counter
         </button>
 
+            <div className="egg">
+            </div>
       </div>
     );
   }
