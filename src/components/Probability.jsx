@@ -12,7 +12,9 @@ export default class Probability extends Component {
     encounterOdds: 0,
     until50: 4159,
     until90: 13815,
-    input: ""
+    encounter50: 4159,
+    encounter90: 13815,
+    input: 0
   };
 
   reset = () => {
@@ -32,7 +34,9 @@ export default class Probability extends Component {
       {
         counter: this.state.counter + parseInt(1),
         until50: this.state.until50 - 1,
-        until90: this.state.until90 - 1
+        until90: this.state.until90 - 1,
+        encounter50: this.state.encounter50 - 1 * this.state.encounterRate,
+        encounter90: this.state.encounter90 - 1 * this.state.encounterRate
       },
       () => {
         this.setState(
@@ -56,7 +60,9 @@ export default class Probability extends Component {
         {
           counter: this.state.counter - 1,
           until50: this.state.until50 + 1,
-          until90: this.state.until90 + 1
+          until90: this.state.until90 + 1,
+          encounter50: this.state.encounter50 + 1 * this.state.encounterRate,
+          encounter90: this.state.encounter90 + 1 * this.state.encounterRate,
         },
         () => {
           this.setState(
@@ -92,7 +98,10 @@ export default class Probability extends Component {
       </div>
       <div>
     <h2>Odds of having gotten your desired Luma: {this.state.encounterOdds.toFixed(3)}%</h2>
-        {/* {this.showUntil()} */}
+    <div>
+        <p>Until 50%: {Math.round(this.state.encounter50/this.state.encounterRate)}</p>
+        <p>Until 90%: {Math.round(this.state.encounter90/this.state.encounterRate)}</p>
+      </div>
       </div>
       </div>
     );
@@ -108,7 +117,9 @@ export default class Probability extends Component {
       encounterOdds: 0,
       until50: 4159,
       until90: 13815,
-      input: ""
+      encounter50: 4159,
+      encounter90: 13815,
+      input: 0
     });
   };
 
@@ -133,7 +144,9 @@ export default class Probability extends Component {
           encounterOdds: (1 - ((6000 / this.state.encounterRate - 1)/(6000 / this.state.encounterRate)) ** this.state.counter) * 100,
           until50: 4159 - this.state.input,
           until90: 13815 - this.state.input,
-          input: ""
+          encounter50: this.state.encounter50 - this.state.input * this.state.encounterRate,
+          encounter90: this.state.encounter90 - this.state.input * this.state.encounterRate,
+          input: 0
         },
         () => {
           console.log("Odds of getting a luma are", this.state.lumaOdds);
@@ -144,9 +157,9 @@ export default class Probability extends Component {
   }
 
   handleChange = (e) => {
-    this.setState({
-      input: e.target.value
-    })
+      this.setState({
+        input: e.target.value
+      })
   }
 
   handleEncounter = (e) => {
