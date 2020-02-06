@@ -82,14 +82,39 @@ button {
   opacity: .1;
   background: url('images/egg.png');
   background-size: cover;
-  /* transition: 50s; */
+  transition: .5s;
 }
 
 .egg:hover {
-  background: url(images/beeg.png);
-  background-size: cover;
   width: 80vw;
   height: 80vh;
+  position: fixed;
+  bottom: 0;
+  right: 0;
   opacity: 1;
+  background: url('images/beeg.png');
+  background-size: cover;
   transition: 10s;
+}
+
+.manual {
+  /* width: 380px; */
+}
+
+.manual label, span, input{
+  margin: 5px;
+}
+
+.manual label > span {
+  float: left;
+  width: 15vw;
+  text-align: left;
+}
+
+.manual  input {
+  float: left;
+}
+
+.forms {
+  width: 400px;
 }

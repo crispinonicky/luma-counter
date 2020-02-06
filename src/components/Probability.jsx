@@ -5,6 +5,7 @@ import Modal from './Modal';
 export default class Probability extends Component {
   state = {
     counter: 0,
+    encounterRate: 100,
     probability: "",
     lumaOdds: 0,
     until50: 4159,
@@ -128,7 +129,6 @@ export default class Probability extends Component {
         }
       );
     })
-
     e.preventDefault()
   }
 
@@ -138,23 +138,55 @@ export default class Probability extends Component {
     })
   }
 
+  handleEncounter = (e) => {
+    this.setState({
+      encounterRate: e.target.value
+    })
+  }
+
   render() {
     return (
       <div>
         {/* <Modal/> */}
         {this.showCounter()}
 
-        <form onSubmit={this.handleSubmit}>
+<div className = "forms">
+        <form className = "manual" onSubmit={this.handleSubmit}>
           <label>
-            Manually set counter:
+            <span>
+              Manually set counter:
+              
+              </span>
             <input
               type="number"
+              min = "0"
               value={this.state.input}
               onChange={this.handleChange}
             />
           </label>
           <input type="submit" value="Submit" />
         </form>
+
+        <br />
+
+        <form className = "manual" onSubmit={this.handleSubmit}>
+          <label>
+            <span>
+              Encounter rate:
+              
+              </span>
+            <input
+              type="number"
+              min = "1"
+              max = "100"
+              value={this.state.encounterRate}
+              onChange={this.handleEncounter}
+            />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>   
+
+        </div>     
 
         <br />
         <div className="counter-buttons">
