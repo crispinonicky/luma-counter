@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "090af139ddb32511e61e5cd4dd9f60ba",
+    "revision": "af889aa2fe4f8f5f476035e17f6c7570",
     "url": "/luma-counter/index.html"
   },
   {
-    "revision": "fd84cfb8226476bc521b",
-    "url": "/luma-counter/static/css/main.afb04217.chunk.css"
+    "revision": "222e446eab6f11aa626d",
+    "url": "/luma-counter/static/css/main.8190417d.chunk.css"
   },
   {
     "revision": "9950c0077fae0efbc9d5",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/luma-counter/static/js/2.ccbdd2f5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fd84cfb8226476bc521b",
-    "url": "/luma-counter/static/js/main.ace7fcc0.chunk.js"
+    "revision": "222e446eab6f11aa626d",
+    "url": "/luma-counter/static/js/main.e2d2940c.chunk.js"
   },
   {
     "revision": "39eecb859945d93a6349",
