@@ -37,17 +37,14 @@
   }
 }
 
-button {
-  padding: 20px 50px;
-  border-radius: 8px;
-  color: white;
-  font-size: 17px;
-}
 
 .add {
   padding: 20px 70px;
   font-size: 25px;
   background-color: #8BE76D;
+  border-radius: 8px;
+  color: white;
+
 }
 
 .subtract {
@@ -55,11 +52,19 @@ button {
   font-size: 25px;
   margin-right: 20px;
   background-color: #E77F6D;
+  border-radius: 8px;
+  color: white;
+
 }
 
 .reset {
+  padding: 20px 50px;
   margin-top: 50px;
   background-color: grey;
+  border-radius: 8px;
+  font-size: 17px;
+  color: white;
+
 }
 
 .beeg {
@@ -98,23 +103,39 @@ button {
 }
 
 .manual {
-  /* width: 380px; */
-}
-
-.manual label, span, input{
-  margin: 5px;
-}
-
-.manual label > span {
-  float: left;
-  width: 15vw;
-  text-align: left;
-}
-
-.manual  input {
-  float: left;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .forms {
-  width: 400px;
+  width: 350px;
+  margin: 20px auto;
+}
+
+.manual > span {
+  width: 120px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.manual > input {
+  width: 80px;
+}
+
+.manual > button {
+  margin-left: 20px;
+}
+
+.encounter {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.encounter > span {
+  /* margin-right: -30px; */
+}
+
+.encounter > input {
+  width: 40px;
 }

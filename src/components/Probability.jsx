@@ -5,9 +5,11 @@ import Modal from './Modal';
 export default class Probability extends Component {
   state = {
     counter: 0,
-    encounterRate: 100,
+    encounterRate: 1,
+    encounterInput: 100,
     probability: "",
     lumaOdds: 0,
+    encounterOdds: 0,
     until50: 4159,
     until90: 13815,
     input: ""
@@ -82,7 +84,14 @@ export default class Probability extends Component {
   showProbability = () => {
     return (
       <div>
-        <h2>Odds of having gotten a Luma: {this.state.lumaOdds.toFixed(3)}%</h2>
+      <div>
+        <h2>Odds of having gotten any Luma: {this.state.lumaOdds.toFixed(3)}%</h2>
+        {this.showUntil()}
+      </div>
+      <div>
+    <h2>Odds of having gotten your desired Luma: {this.state.encounterRate}%</h2>
+        {/* {this.showUntil()} */}
+      </div>
       </div>
     );
   };
@@ -92,6 +101,9 @@ export default class Probability extends Component {
       counter: 0,
       probability: "",
       lumaOdds: 0,
+      encounterOdds: 0,
+      encounterRate: 0,
+      encounterInput: 100,
       until50: 4159,
       until90: 13815,
       input: ""
@@ -106,10 +118,6 @@ export default class Probability extends Component {
       </div>
     );
   };
-
-  info = () => {
-    console.log("heyyyy")
-  }
 
   handleSubmit = (e) => {
     console.log(this.state.input)
@@ -140,21 +148,45 @@ export default class Probability extends Component {
 
   handleEncounter = (e) => {
     this.setState({
-      encounterRate: e.target.value
+      encounterInput: parseInt(e.target.value)
+    }, ()=> {
+      this.setState({
+        encounterRate: this.state.encounterInput / 100
+      })
+      if (this.state.encounterInput > 100) {
+        this.setState({
+          encounterInput: 100
+        }, ()=> {
+          this.setState({
+            encounterRate: this.state.encounterInput / 100
+          }, ()=> {
+            console.log(this.state)
+          })
+        })
+      } else if (!this.state.encounterInput) {
+      this.setState({
+        encounterInput: 0
+      }, ()=> {
+        this.setState({
+          encounterRate: this.state.encounterInput / 100
+        }, ()=> {
+          console.log(this.state)
+        })
+      })
+    } 
     })
+    e.preventDefault()
   }
 
   render() {
     return (
       <div>
-        {/* <Modal/> */}
         {this.showCounter()}
 
 <div className = "forms">
         <form className = "manual" onSubmit={this.handleSubmit}>
-          <label>
             <span>
-              Manually set counter:
+              Set counter:
               
               </span>
             <input
@@ -163,27 +195,24 @@ export default class Probability extends Component {
               value={this.state.input}
               onChange={this.handleChange}
             />
-          </label>
-          <input type="submit" value="Submit" />
+          <button>Submit</button>
         </form>
 
         <br />
 
-        <form className = "manual" onSubmit={this.handleSubmit}>
-          <label>
+        <form className = "manual encounter" onSubmit={this.handleSubmit}>
             <span>
               Encounter rate:
               
               </span>
             <input
               type="number"
-              min = "1"
+              min = "0"
               max = "100"
-              value={this.state.encounterRate}
+              value={this.state.encounterInput}
               onChange={this.handleEncounter}
             />
-          </label>
-          <input type="submit" value="Submit" />
+            <span>%</span>
         </form>   
 
         </div>     
@@ -200,11 +229,13 @@ export default class Probability extends Component {
 
         {this.showProbability()}
 
-        {this.showUntil()}
 
+<div>
         <button className="reset" onClick={this.reset}>
           Reset Counter
         </button>
+
+</div>
 
             <div className="egg">
             </div>
