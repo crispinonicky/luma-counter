@@ -37,7 +37,8 @@ export default class Probability extends Component {
       () => {
         this.setState(
           {
-            lumaOdds: (1 - (5999 / 6000) ** this.state.counter) * 100
+            lumaOdds: (1 - (5999 / 6000) ** this.state.counter) * 100,
+            encounterOdds: (1 - ((6000 / this.state.encounterRate - 1)/(6000 / this.state.encounterRate)) ** this.state.counter) * 100
           },
           () => {
             console.log("Odds of getting a luma are", this.state.lumaOdds);
@@ -60,7 +61,8 @@ export default class Probability extends Component {
         () => {
           this.setState(
             {
-              lumaOdds: (1 - (5999 / 6000) ** this.state.counter) * 100
+              lumaOdds: (1 - (5999 / 6000) ** this.state.counter) * 100,
+              encounterOdds: (1 - ((6000 / this.state.encounterRate - 1)/(6000 / this.state.encounterRate)) ** this.state.counter) * 100
             },
             () => {
               console.log("Odds of getting a luma are", this.state.lumaOdds);
@@ -89,7 +91,7 @@ export default class Probability extends Component {
         {this.showUntil()}
       </div>
       <div>
-    <h2>Odds of having gotten your desired Luma: {this.state.encounterRate}%</h2>
+    <h2>Odds of having gotten your desired Luma: {this.state.encounterOdds.toFixed(3)}%</h2>
         {/* {this.showUntil()} */}
       </div>
       </div>
@@ -99,11 +101,11 @@ export default class Probability extends Component {
   reset = () => {
     this.setState({
       counter: 0,
+      encounterRate: 1,
+      encounterInput: 100,
       probability: "",
       lumaOdds: 0,
       encounterOdds: 0,
-      encounterRate: 0,
-      encounterInput: 100,
       until50: 4159,
       until90: 13815,
       input: ""
@@ -128,6 +130,7 @@ export default class Probability extends Component {
       this.setState(
         {
           lumaOdds: (1 - (5999 / 6000) ** this.state.counter) * 100,
+          encounterOdds: (1 - ((6000 / this.state.encounterRate - 1)/(6000 / this.state.encounterRate)) ** this.state.counter) * 100,
           until50: 4159 - this.state.input,
           until90: 13815 - this.state.input,
           input: ""
