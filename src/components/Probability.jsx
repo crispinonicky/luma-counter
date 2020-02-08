@@ -157,9 +157,9 @@ export default class Probability extends Component {
   }
 
   handleChange = (e) => {
-      this.setState({
-        input: e.target.value
-      })
+        this.setState({
+          input: e.target.value
+        })
   }
 
   handleEncounter = (e) => {
@@ -191,6 +191,8 @@ export default class Probability extends Component {
       })
     } 
     })
+    console.log('this is where we do the logic')
+    console.log(this.state)
     e.preventDefault()
   }
 
@@ -210,6 +212,7 @@ export default class Probability extends Component {
               min = "0"
               value={this.state.input}
               onChange={this.handleChange}
+              required
             />
           <button>Submit</button>
         </form>
@@ -227,6 +230,7 @@ export default class Probability extends Component {
               max = "100"
               value={this.state.encounterInput}
               onChange={this.handleEncounter}
+              required
             />
             <span>%</span>
         </form>   
