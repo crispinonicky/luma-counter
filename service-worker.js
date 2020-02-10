@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/luma-counter/precache-manifest.eb5f8042afbb874a80d5fad1cb4156b0.js"
+  "/luma-counter/precache-manifest.a5c4ac3249eea87ebc86ae7024430956.js"
 );
 
 self.addEventListener('message', (event) => {
